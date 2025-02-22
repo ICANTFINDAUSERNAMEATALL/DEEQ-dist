@@ -14,7 +14,7 @@ def sigmoid(x):
     except Exception as err:
         print("Error in sigmoid: " + err)
 
-def get_state(data, t, n_days, inventory, esmad, dd_trades):
+def get_state(data, t, n_days, esmad):
     """Returns an n-day state representation ending at time t
     THIS IS ALSO THE DATA THAT GETS PUSHED INTO THE MEMORY OF THE THING. 
     I WILL NEED TO MODIFY THIS TO PROCESS DIFFERENT DATA, NOT JUST CHANGE IN PRICING.
@@ -34,7 +34,7 @@ def get_state(data, t, n_days, inventory, esmad, dd_trades):
     # mas = [[sigmoid(i)] for i in esmad]
     # invs = [inventory] # REMOVING THIS FOR NOW
 
-    return np.array([res]), np.array([inventory, dd_trades])
+    return np.array([res])
 
 def get_invs_state(inventory, dd_trades):
     return np.array([inventory, dd_trades])
