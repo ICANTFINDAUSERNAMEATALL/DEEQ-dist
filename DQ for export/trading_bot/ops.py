@@ -34,10 +34,7 @@ def get_state(data, t, n_days, esmad):
     # mas = [[sigmoid(i)] for i in esmad]
     # invs = [inventory] # REMOVING THIS FOR NOW
 
-    return np.array([res])
-
-def get_invs_state(inventory, dd_trades):
-    return np.array([inventory, dd_trades])
+    return np.array([res]), np.array([0, 0])
 
 # test commit
 
